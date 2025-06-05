@@ -80,7 +80,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
   return (
     <>
       {/* Desktop Sidebar */}
-      <div className="fixed inset-y-0 left-0 z-50 w-64 bg-white border-r border-slate-200 lg:block hidden">
+      <div className="fixed inset-y-0 left-0 z-50 w-64 bg-charcoal border-r border-lapis-lazuli shadow-lg rounded-r-2xl lg:block hidden">
         <SidebarContent />
       </div>
 

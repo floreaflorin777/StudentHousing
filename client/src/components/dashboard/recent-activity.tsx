@@ -47,9 +47,9 @@ export function RecentActivity() {
   };
 
   return (
-    <Card>
-      <CardHeader className="border-b border-slate-200">
-        <CardTitle className="text-lg font-semibold text-slate-900">
+    <Card className="shadow-lg rounded-xl bg-white">
+      <CardHeader className="border-b border-carolina-blue">
+        <CardTitle className="text-lg font-semibold text-charcoal">
           Recent Activity
         </CardTitle>
       </CardHeader>

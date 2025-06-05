@@ -31,13 +31,13 @@ export function PaymentSummary() {
   };
 
   return (
-    <Card>
-      <CardHeader className="border-b border-slate-200">
+    <Card className="shadow-lg rounded-xl bg-white">
+      <CardHeader className="border-b border-carolina-blue">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-lg font-semibold text-slate-900">
+          <CardTitle className="text-lg font-semibold text-charcoal">
             Payment Summary
           </CardTitle>
-          <Button variant="ghost" size="sm" className="text-primary hover:text-blue-600">
+          <Button variant="ghost" size="sm" className="text-lapis-lazuli hover:text-orange-pantone">
             View All
           </Button>
         </div>
@@ -57,18 +57,18 @@ export function PaymentSummary() {
                     {flatmate.initials}
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-900">{flatmate.name}</p>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-sm font-medium text-charcoal">{flatmate.name}</p>
+                    <p className="text-xs text-carolina-blue">
                       {flatmate.id === 1 ? 'You' : 'Flatmate'}
                     </p>
                   </div>
                 </div>
                 <span className={`text-sm font-medium ${
                   balance.status === 'owes' 
-                    ? 'text-amber-600' 
+                    ? 'text-orange-pantone' 
                     : balance.status === 'paid'
-                    ? 'text-green-600'
-                    : 'text-slate-600'
+                    ? 'text-hunyadi-yellow'
+                    : 'text-lapis-lazuli'
                 }`}>
                   {balance.status === 'owes' && `Owes $${balance.amount}`}
                   {balance.status === 'paid' && `Paid $${balance.amount}`}
@@ -79,8 +79,8 @@ export function PaymentSummary() {
           })}
         </div>
 
-        <div className="mt-4 pt-4 border-t border-slate-200">
-          <Button className="w-full">
+        <div className="mt-4 pt-4 border-t border-carolina-blue">
+          <Button className="w-full bg-lapis-lazuli text-white hover:bg-orange-pantone hover:text-charcoal">
             Send Payment Reminders
           </Button>
         </div>

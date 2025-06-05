@@ -23,22 +23,22 @@ const iconMap = {
 };
 
 const colorMap = {
-  red: "bg-red-100 text-red-600",
-  green: "bg-green-100 text-green-600",
-  amber: "bg-amber-100 text-amber-600",
-  blue: "bg-blue-100 text-blue-600",
+  red: "bg-orange-pantone text-white",
+  green: "bg-hunyadi-yellow text-charcoal",
+  amber: "bg-lapis-lazuli text-white",
+  blue: "bg-carolina-blue text-charcoal",
 };
 
 export function StatCard({ title, value, icon, color, subtitle }: StatCardProps) {
   const Icon = iconMap[icon as keyof typeof iconMap] || CalendarDays;
   
   return (
-    <Card>
+    <Card className="shadow-lg rounded-xl">
       <CardContent className="p-6">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-slate-600">{title}</p>
-            <p className="text-2xl font-semibold text-slate-900 mt-1">{value}</p>
+            <p className="text-sm font-medium text-charcoal">{title}</p>
+            <p className="text-2xl font-semibold text-charcoal mt-1">{value}</p>
           </div>
           <div className={cn("w-12 h-12 rounded-lg flex items-center justify-center", colorMap[color])}>
             <Icon className="h-6 w-6" />

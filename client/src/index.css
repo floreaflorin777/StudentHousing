@@ -3,25 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: 210 11% 98%; /* #F8FAFC */
-  --foreground: 222 84% 5%; /* #0F172A */
-  --muted: 210 9% 96%; /* #F1F5F9 */
-  --muted-foreground: 215 16% 47%; /* #64748B */
-  --popover: 0 0% 100%; /* #FFFFFF */
-  --popover-foreground: 222 84% 5%; /* #0F172A */
-  --card: 0 0% 100%; /* #FFFFFF */
-  --card-foreground: 222 84% 5%; /* #0F172A */
-  --border: 214 13% 89%; /* #E2E8F0 */
-  --input: 214 13% 89%; /* #E2E8F0 */
-  --primary: 221 83% 53%; /* #3B82F6 */
-  --primary-foreground: 210 40% 98%; /* #F8FAFC */
-  --secondary: 160 84% 39%; /* #10B981 */
-  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
-  --accent: 25 95% 53%; /* #F59E0B */
-  --accent-foreground: 0 0% 100%; /* #FFFFFF */
-  --destructive: 0 84% 60%; /* #EF4444 */
-  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
-  --ring: 221 83% 53%; /* #3B82F6 */
+  --charcoal: 203 30% 26%; /* #2f4858 */
+  --lapis-lazuli: 206 46% 37%; /* #33658a */
+  --carolina-blue: 201 51% 69%; /* #86bbd8 */
+  --hunyadi-yellow: 39 92% 57%; /* #f6ae2d */
+  --orange-pantone: 21 89% 52%; /* #f26419 */
+  
+  /* Example usage for background/foreground, update as needed */
+  --background: var(--carolina-blue);
+  --foreground: var(--charcoal);
+  --primary: var(--lapis-lazuli);
+  --secondary: var(--hunyadi-yellow);
+  --accent: var(--orange-pantone);
+  --border: var(--lapis-lazuli);
+  --input: var(--lapis-lazuli);
+  --card: var(--carolina-blue);
+  --card-foreground: var(--charcoal);
+  --popover: var(--carolina-blue);
+  --popover-foreground: var(--charcoal);
+  --muted: var(--carolina-blue);
+  --muted-foreground: var(--charcoal);
+  --destructive: var(--orange-pantone);
+  --destructive-foreground: var(--charcoal);
+  --ring: var(--lapis-lazuli);
   --radius: 0.75rem;
 
   /* Custom colors for task categories */
@@ -31,25 +35,28 @@
 }
 
 .dark {
-  --background: 222 84% 5%; /* #0F172A */
-  --foreground: 210 40% 98%; /* #F8FAFC */
-  --muted: 217 33% 17%; /* #1E293B */
-  --muted-foreground: 215 20% 65%; /* #94A3B8 */
-  --popover: 222 84% 5%; /* #0F172A */
-  --popover-foreground: 210 40% 98%; /* #F8FAFC */
-  --card: 222 84% 5%; /* #0F172A */
-  --card-foreground: 210 40% 98%; /* #F8FAFC */
-  --border: 217 33% 17%; /* #1E293B */
-  --input: 217 33% 17%; /* #1E293B */
-  --primary: 221 83% 53%; /* #3B82F6 */
-  --primary-foreground: 210 40% 98%; /* #F8FAFC */
-  --secondary: 160 84% 39%; /* #10B981 */
-  --secondary-foreground: 0 0% 100%; /* #FFFFFF */
-  --accent: 25 95% 53%; /* #F59E0B */
-  --accent-foreground: 0 0% 100%; /* #FFFFFF */
-  --destructive: 0 84% 60%; /* #EF4444 */
-  --destructive-foreground: 0 0% 100%; /* #FFFFFF */
-  --ring: 221 83% 53%; /* #3B82F6 */
+  --charcoal: 203 30% 26%; /* #2f4858 */
+  --lapis-lazuli: 206 46% 37%; /* #33658a */
+  --carolina-blue: 201 51% 69%; /* #86bbd8 */
+  --hunyadi-yellow: 39 92% 57%; /* #f6ae2d */
+  --orange-pantone: 21 89% 52%; /* #f26419 */
+  
+  --background: var(--charcoal);
+  --foreground: var(--carolina-blue);
+  --primary: var(--lapis-lazuli);
+  --secondary: var(--hunyadi-yellow);
+  --accent: var(--orange-pantone);
+  --border: var(--carolina-blue);
+  --input: var(--carolina-blue);
+  --card: var(--charcoal);
+  --card-foreground: var(--carolina-blue);
+  --popover: var(--charcoal);
+  --popover-foreground: var(--carolina-blue);
+  --muted: var(--charcoal);
+  --muted-foreground: var(--carolina-blue);
+  --destructive: var(--orange-pantone);
+  --destructive-foreground: var(--carolina-blue);
+  --ring: var(--lapis-lazuli);
 
   /* Custom colors for task categories in dark mode */
   --cleaning: 0 84% 60%; /* #EF4444 */

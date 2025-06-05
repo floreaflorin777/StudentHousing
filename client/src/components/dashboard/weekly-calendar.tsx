@@ -63,17 +63,17 @@ export function WeeklyCalendar() {
   };
 
   return (
-    <Card>
-      <CardHeader className="border-b border-slate-200">
+    <Card className="shadow-lg rounded-xl bg-white">
+      <CardHeader className="border-b border-carolina-blue">
         <div className="flex items-center justify-between">
-          <CardTitle className="text-lg font-semibold text-slate-900">
+          <CardTitle className="text-lg font-semibold text-charcoal">
             This Week's Schedule
           </CardTitle>
           <div className="flex items-center space-x-2">
             <Button variant="ghost" size="sm">
               <ChevronLeft className="h-4 w-4" />
             </Button>
-            <span className="text-sm font-medium text-slate-900">
+            <span className="text-sm font-medium text-charcoal">
               {format(weekStart, 'MMM d')} - {format(addDays(weekStart, 6), 'MMM d, yyyy')}
             </span>
             <Button variant="ghost" size="sm">

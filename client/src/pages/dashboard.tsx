@@ -22,20 +22,20 @@ export default function Dashboard() {
   });
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-carolina-blue">
       {/* Sidebar */}
       <Sidebar isOpen={isMobileMenuOpen} onClose={() => setIsMobileMenuOpen(false)} />
 
       {/* Mobile Navigation */}
-      <div className="lg:hidden bg-white border-b border-slate-200 px-4 py-3">
+      <div className="lg:hidden bg-white border-b border-carolina-blue/30 px-4 py-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-lapis-lazuli rounded-lg flex items-center justify-center">
               <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
               </svg>
             </div>
-            <span className="text-xl font-semibold text-slate-900">FlatMate</span>
+            <span className="text-xl font-semibold text-charcoal">FlatMate</span>
           </div>
           <Button
             variant="ghost"
@@ -48,24 +48,24 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content */}
-      <main className="lg:pl-64">
+      <main className="lg:pl-64 p-6 space-y-8">
         {/* Header */}
-        <header className="bg-white border-b border-slate-200 px-6 py-4">
+        <header className="bg-white border-b border-carolina-blue/30 px-6 py-4 rounded-lg shadow-sm">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-semibold text-slate-900">Dashboard</h1>
-              <p className="text-sm text-slate-600 mt-1">Manage your shared living space</p>
+              <h1 className="text-2xl font-semibold text-charcoal">Dashboard</h1>
+              <p className="text-sm text-lapis-lazuli mt-1">Manage your shared living space</p>
             </div>
             <div className="flex items-center space-x-4">
               {/* Notifications */}
               <Button variant="ghost" size="sm" className="relative">
                 <Bell className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 w-4 h-4 bg-orange-pantone text-white text-xs rounded-full flex items-center justify-center">
                   {stats?.overdueTasks || 0}
                 </span>
               </Button>
               {/* Quick Actions */}
-              <Button onClick={() => setIsTaskModalOpen(true)}>
+              <Button onClick={() => setIsTaskModalOpen(true)} className="bg-hunyadi-yellow text-charcoal hover:bg-orange-pantone hover:text-white">
                 <Plus className="h-4 w-4 mr-2" />
                 Add Task
               </Button>
@@ -74,56 +74,53 @@ export default function Dashboard() {
         </header>
 
         {/* Dashboard Content */}
-        <div className="p-6 space-y-6">
-          {/* Quick Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <StatCard
-              title="Tasks Due Today"
-              value={stats?.tasksToday || 0}
-              icon="calendar-day"
-              color="red"
-              subtitle={`${stats?.overdueTasks || 0} overdue tasks pending`}
-            />
-            <StatCard
-              title="Completed This Week"
-              value={stats?.completedThisWeek || 0}
-              icon="check-circle"
-              color="green"
-              subtitle="+20% from last week"
-            />
-            <StatCard
-              title="Grocery Balance"
-              value={`$${stats?.groceryBalance || "0.00"}`}
-              icon="shopping-cart"
-              color="amber"
-              subtitle="You owe $12.25"
-            />
-            <StatCard
-              title="Active Flatmates"
-              value={stats?.activeFlatmates || 0}
-              icon="users"
-              color="blue"
-              subtitle="All members active"
-            />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <StatCard
+            title="Tasks Due Today"
+            value={stats?.tasksToday || 0}
+            icon="calendar-day"
+            color="red"
+            subtitle={`${stats?.overdueTasks || 0} overdue tasks pending`}
+          />
+          <StatCard
+            title="Completed This Week"
+            value={stats?.completedThisWeek || 0}
+            icon="check-circle"
+            color="green"
+            subtitle="+20% from last week"
+          />
+          <StatCard
+            title="Grocery Balance"
+            value={`$${stats?.groceryBalance || "0.00"}`}
+            icon="shopping-cart"
+            color="amber"
+            subtitle="You owe $12.25"
+          />
+          <StatCard
+            title="Active Flatmates"
+            value={stats?.activeFlatmates || 0}
+            icon="users"
+            color="blue"
+            subtitle="All members active"
+          />
+        </div>
+
+        {/* Main Dashboard Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* Left Column - Calendar & Activities */}
+          <div className="lg:col-span-2 space-y-6">
+            <WeeklyCalendar />
+            <RecentActivity />
           </div>
 
-          {/* Main Dashboard Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {/* Left Column - Calendar & Activities */}
-            <div className="lg:col-span-2 space-y-6">
-              <WeeklyCalendar />
-              <RecentActivity />
-            </div>
-
-            {/* Right Column - Quick Actions & Lists */}
-            <div className="space-y-6">
-              <GroceryList />
-              <PaymentSummary />
-              <QuickActions 
-                onAddTask={() => setIsTaskModalOpen(true)}
-                onAddExpense={() => setIsExpenseModalOpen(true)}
-              />
-            </div>
+          {/* Right Column - Quick Actions & Lists */}
+          <div className="space-y-6">
+            <GroceryList />
+            <PaymentSummary />
+            <QuickActions 
+              onAddTask={() => setIsTaskModalOpen(true)}
+              onAddExpense={() => setIsExpenseModalOpen(true)}
+            />
           </div>
         </div>
       </main>
