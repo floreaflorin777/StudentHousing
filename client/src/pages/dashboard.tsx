@@ -48,7 +48,7 @@ export default function Dashboard() {
       </div>
 
       {/* Main Content */}
-      <main className="lg:pl-64 p-6 space-y-8">
+      <main className="lg:pl-72 p-8 space-y-8">
         {/* Header */}
         <header className="bg-white border-b border-carolina-blue/30 px-6 py-4 rounded-lg shadow-sm">
           <div className="flex items-center justify-between">
@@ -74,7 +74,7 @@ export default function Dashboard() {
         </header>
 
         {/* Dashboard Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <StatCard
             title="Tasks Due Today"
             value={stats?.tasksToday || 0}
@@ -106,15 +106,15 @@ export default function Dashboard() {
         </div>
 
         {/* Main Dashboard Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Calendar & Activities */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-8">
             <WeeklyCalendar />
             <RecentActivity />
           </div>
 
           {/* Right Column - Quick Actions & Lists */}
-          <div className="space-y-6">
+          <div className="space-y-8">
             <GroceryList />
             <PaymentSummary />
             <QuickActions 
